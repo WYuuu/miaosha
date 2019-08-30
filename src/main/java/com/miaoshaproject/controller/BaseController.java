@@ -12,15 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/** 定义exception handler解决未被controller层吸收的exception
  * @Author: WY
  * @Date: 2019/8/26 16:47
  */
 public class BaseController {
     public static final String CONTENT_TYPE_FORMED="application/x-www-form-urlencoded";
 
-    //    定义exception handler解决未被controller层吸收的exception
-   /* @ExceptionHandler(Exception.class)
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object handlerException(HttpServletRequest request, Exception e){
@@ -35,5 +34,5 @@ public class BaseController {
             responseData.put("errorMsg", EmBusinessError.UNKNOWN_ERROR.getErrorMsg());
         }
         return CommonReturnType.create(responseData,"FAIL");
-    }*/
+    }
 }
